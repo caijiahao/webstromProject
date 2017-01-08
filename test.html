@@ -7,107 +7,107 @@
     <link rel="stylesheet" href="./css/demo.css" type="text/css"/>
 
     <script type="text/javascript">
-        $(function(){
-            var flow=[];
-            for(var i=0;i<25;i++){
-                flow.push(Math.floor(Math.random()*(10+((i%16)*5)))+10);
+        $(function () {
+            var flow = [];
+            for (var i = 0; i < 25; i++) {
+                flow.push(Math.floor(Math.random() * (10 + ((i % 16) * 5))) + 10);
             }
 
             var data = [
                 {
-                    name : 'PV',
-                    value:flow,
-                    color:'#ec4646',
-                    line_width:2
+                    name: 'PV',
+                    value: flow,
+                    color: '#ec4646',
+                    line_width: 2
                 }
             ];
 
-            var labels = ["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"];
+            var labels = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"];
 
             var chart = new iChart.LineBasic2D({
-                render : 'canvasDiv',
+                render: 'canvasDiv',
                 data: data,
-                align:'center',
-                title : {
-                    text:'今日增城农场二氧化碳浓度',
-                    font : '微软雅黑',
-                    fontsize:24,
-                    color:'#b4b4b4'
+                align: 'center',
+                title: {
+                    text: '今日增城农场二氧化碳浓度',
+                    font: '微软雅黑',
+                    fontsize: 24,
+                    color: '#b4b4b4'
                 },
-                subtitle : {
-                    text:'14:00-16:00二氧化碳达到最大值',
-                    font : '微软雅黑',
-                    color:'#b4b4b4'
+                subtitle: {
+                    text: '14:00-16:00二氧化碳达到最大值',
+                    font: '微软雅黑',
+                    color: '#b4b4b4'
                 },
-                footnote : {
-                    text:'ichartjs.com',
-                    font : '微软雅黑',
-                    fontsize:11,
-                    fontweight:600,
-                    padding:'0 28',
-                    color:'#b4b4b4'
+                footnote: {
+                    text: 'ichartjs.com',
+                    font: '微软雅黑',
+                    fontsize: 11,
+                    fontweight: 600,
+                    padding: '0 28',
+                    color: '#b4b4b4'
                 },
-                width : 800,
-                height : 400,
-                shadow:true,
-                shadow_color : '#202020',
-                shadow_blur : 8,
-                shadow_offsetx : 0,
-                shadow_offsety : 0,
-                background_color:'#2e2e2e',
-                animation : true,//开启过渡动画
-                animation_duration:600,//600ms完成动画
-                tip:{
-                    enable:true,
-                    shadow:true,
-                    listeners:{
+                width: 1000,
+                height: 400,
+                shadow: true,
+                shadow_color: '#202020',
+                shadow_blur: 8,
+                shadow_offsetx: 0,
+                shadow_offsety: 0,
+                background_color: '#2e2e2e',
+                animation: true,//开启过渡动画
+                animation_duration: 600,//600ms完成动画
+                tip: {
+                    enable: true,
+                    shadow: true,
+                    listeners: {
                         //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
-                        parseText:function(tip,name,value,text,i){
-                            return "<span style='color:#005268;font-size:12px;'>"+labels[i]+":00访问量约:<br/>"+
-                                "</span><span style='color:#005268;font-size:20px;'>"+value+"万</span>";
+                        parseText: function (tip, name, value, text, i) {
+                            return "<span style='color:#005268;font-size:12px;'>" + labels[i] + ":00访问量约:<br/>" +
+                                "</span><span style='color:#005268;font-size:20px;'>" + value + "万</span>";
                         }
                     }
                 },
-                crosshair:{
-                    enable:true,
-                    line_color:'#ec4646'
+                crosshair: {
+                    enable: true,
+                    line_color: '#ec4646'
                 },
-                sub_option : {
-                    smooth : true,
-                    label:false,
-                    hollow:false,
-                    hollow_inside:false,
-                    point_size:8
+                sub_option: {
+                    smooth: true,
+                    label: false,
+                    hollow: false,
+                    hollow_inside: false,
+                    point_size: 8
                 },
-                coordinate:{
-                    width:640,
-                    height:260,
-                    striped_factor : 0.18,
-                    grid_color:'#4e4e4e',
-                    axis:{
-                        color:'#252525',
-                        width:[0,0,4,4]
+                coordinate: {
+                    width: 640,
+                    height: 260,
+                    striped_factor: 0.18,
+                    grid_color: '#4e4e4e',
+                    axis: {
+                        color: '#252525',
+                        width: [0, 0, 4, 4]
                     },
-                    scale:[{
-                        position:'left',
-                        start_scale:0,
-                        end_scale:100,
-                        scale_space:10,
-                        scale_size:2,
-                        scale_enable : false,
-                        label : {color:'#9d987a',font : '微软雅黑',fontsize:11,fontweight:600},
-                        scale_color:'#9f9f9f'
-                    },{
-                        position:'bottom',
-                        label : {color:'#9d987a',font : '微软雅黑',fontsize:11,fontweight:600},
-                        scale_enable : false,
-                        labels:labels
+                    scale: [{
+                        position: 'left',
+                        start_scale: 0,
+                        end_scale: 100,
+                        scale_space: 10,
+                        scale_size: 2,
+                        scale_enable: false,
+                        label: {color: '#9d987a', font: '微软雅黑', fontsize: 11, fontweight: 600},
+                        scale_color: '#9f9f9f'
+                    }, {
+                        position: 'bottom',
+                        label: {color: '#9d987a', font: '微软雅黑', fontsize: 11, fontweight: 600},
+                        scale_enable: false,
+                        labels: labels
                     }]
                 }
             });
             //利用自定义组件构造左侧说明文本
             chart.plugin(new iChart.Custom({
-                drawFn:function(){
+                drawFn: function () {
                     //计算位置
                     var coo = chart.getCoordinate(),
                         x = coo.get('originx'),
@@ -118,12 +118,251 @@
                     chart.target.textAlign('start')
                         .textBaseline('bottom')
                         .textFont('600 11px 微软雅黑')
-                        .fillText('访问量(万)',x-40,y-12,false,'#9d987a')
+                        .fillText('访问量(万)', x - 40, y - 12, false, '#9d987a')
                         .textBaseline('top')
-                        .fillText('(时间)',x+w+12,y+h+10,false,'#9d987a');
+                        .fillText('(时间)', x + w + 12, y + h + 10, false, '#9d987a');
 
                 }
             }));
+            //开始画图
+            chart.draw();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            var data = [
+                {
+                    name: '便利店',
+                    value: [9, 12, 10, 11, 16],
+                    color: '#e0b645'
+                },
+                {
+                    name: '超市',
+                    value: [63, 42, 38, 21, 14],
+                    color: '#7876ba'
+                },
+                {
+                    name: '大型超市',
+                    value: [32, 19, 23, 11, 7],
+                    color: '#6b8439'
+                }
+            ];
+
+            var chart = new iChart.ColumnStacked3D({
+                render: 'curve',
+                data: data,
+                labels: ["浙江", "江苏", "广东", "北京", "上海"],
+                title: {
+                    text: '连锁零售企业总部(总店)数TOP5',
+                    color: '#254d70'
+                },
+                footnote: '数据来源：中华人民共和国国家统计局',
+                width: 1000,
+                height: 400,
+                column_width: 70,
+                background_color: '#ffffff',
+                shadow: true,
+                shadow_blur: 3,
+                shadow_color: '#aaaaaa',
+                shadow_offsetx: 1,
+                shadow_offsety: 0,
+                sub_option: {
+                    label: {color: '#f9f9f9', fontsize: 12, fontweight: 600},
+                    border: {
+                        width: 2,
+                        color: '#ffffff'
+                    }
+                },
+                label: {color: '#254d70', fontsize: 12, fontweight: 600},
+                legend: {
+                    enable: true,
+                    background_color: null,
+                    line_height: 25,
+                    color: '#254d70',
+                    fontsize: 12,
+                    fontweight: 600,
+                    border: {
+                        enable: false
+                    }
+                },
+                tip: {
+                    enable: true,
+                    listeners: {
+                        //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+                        parseText: function (tip, name, value, text, i) {
+                            return name + ":" + value + '个';
+                        }
+                    }
+                },
+                text_space: 16,//坐标系下方的label距离坐标系的距离。
+                zScale: 0.5,
+                xAngle: 50,
+                bottom_scale: 1.1,
+                coordinate: {
+                    width: '74%',
+                    height: '80%',
+                    board_deep: 10,//背面厚度
+                    pedestal_height: 10,//底座高度
+                    left_board: false,//取消左侧面板
+                    shadow: true,//底座的阴影效果
+                    grid_color: '#6a6a80',//网格线
+                    wall_style: [{//坐标系的各个面样式
+                        color: '#6a6a80'
+                    }, {
+                        color: '#b2b2d3'
+                    }, {
+                        color: '#a6a6cb'
+                    }, {
+                        color: '#6a6a80'
+                    }, {
+                        color: '#74749b'
+                    }, {
+                        color: '#a6a6cb'
+                    }],
+                    axis: {
+                        color: '#c0d0e0',
+                        width: 0
+                    },
+                    scale: [{
+                        position: 'left',
+                        scale_enable: false,
+                        start_scale: 0,
+                        scale_space: 20,
+                        end_scale: 120,
+                        label: {color: '#254d70', fontsize: 11, fontweight: 600}
+                    }]
+                }
+            });
+
+            //利用自定义组件构造左上侧单位
+            chart.plugin(new iChart.Custom({
+                drawFn: function () {
+                    //计算位置
+                    var coo = chart.getCoordinate(),
+                        x = coo.get('originx'),
+                        y = coo.get('originy');
+                    //在左上侧的位置，渲染一个单位的文字
+                    chart.target.textAlign('end')
+                        .textBaseline('bottom')
+                        .textFont('600 12px 微软雅黑')
+                        .fillText('单位(个)', x + 10, y - 20, false, '#254d70')
+
+                }
+            }));
+
+            chart.draw();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            var pv = [], ip = [], t;
+            //创建随机数据
+            for (var i = 0; i < 61; i++) {
+                t = Math.floor(Math.random() * (30 + ((i % 12) * 5))) + 10;
+                pv.push(t);
+                t = Math.floor(t * 0.5);
+                t = t - Math.floor((Math.random() * t) / 2);
+                ip.push(t);
+            }
+
+            var data = [
+                {
+                    name: 'PV',
+                    value: pv,
+                    color: '#aad0db',
+                    line_width: 2
+                },
+                {
+                    name: 'IP',
+                    value: ip,
+                    color: '#f68f70',
+                    line_width: 2
+                }
+            ];
+
+            //创建x轴标签文本
+            var date = new Date();
+            date.setDate(date.getDate() - 6);
+            var labels = [];
+            for (var i = 0; i < 6; i++) {
+                date.setDate(date.getDate() + 1);
+                labels.push(date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate());
+            }
+
+            var chart = new iChart.LineBasic2D({
+                render: 'third',
+                data: data,
+                align: 'center',
+                title: 'A网站近5天流量趋势,按每2小时分组统计',
+                subtitle: '平均每个人访问2-3个页面(访问量单位：万)',
+                footnote: '数据来源：模拟数据',
+                width: 1000,
+                height: 400,
+                background_color: '#FEFEFE',
+                tip: {
+                    enable: true,
+                    shadow: true,
+                    move_duration: 400,
+                    border: {
+                        enable: true,
+                        radius: 5,
+                        width: 2,
+                        color: '#3f8695'
+                    },
+                    listeners: {
+                        //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+                        parseText: function (tip, name, value, text, i) {
+                            return name + "访问量:" + value + "万";
+                        }
+                    }
+                },
+                tipMocker: function (tips, i) {
+                    return "<div style='font-weight:600'>" +
+                        labels[Math.floor(i / 12)] + " " +//日期
+                        (((i % 12) * 2 < 10 ? "0" : "") + (i % 12) * 2) + ":00" +//时间
+                        "</div>" + tips.join("<br/>");
+                },
+                legend: {
+                    enable: true,
+                    row: 1,//设置在一行上显示，与column配合使用
+                    column: 'max',
+                    valign: 'top',
+                    sign: 'bar',
+                    background_color: null,//设置透明背景
+                    offsetx: -80,//设置x轴偏移，满足位置需要
+                    border: true
+                },
+                crosshair: {
+                    enable: true,
+                    line_color: '#62bce9'//十字线的颜色
+                },
+                sub_option: {
+                    label: false,
+                    point_size: 10
+                },
+                coordinate: {
+                    width: 640,
+                    height: 240,
+                    axis: {
+                        color: '#dcdcdc',
+                        width: 1
+                    },
+                    scale: [{
+                        position: 'left',
+                        start_scale: 0,
+                        end_scale: 100,
+                        scale_space: 10,
+                        scale_size: 2,
+                        scale_color: '#9f9f9f'
+                    }, {
+                        position: 'bottom',
+                        labels: labels
+                    }]
+                }
+            });
+
             //开始画图
             chart.draw();
         });
@@ -2221,45 +2460,41 @@
 
 
             </div>
-            <input type="hidden" id="fc_3h_internal_update_time" value="2017-01-05 18:00">
             <div class="curve_livezs" id="curve">
-                <div class="time">
-                    <em style="width:170px;left:0px">20时</em><em style="width:170px;left:170px">23时</em><em
-                        style="width:170px;left:340px">02时</em><em style="width:170px;left:510px">05时</em></div>
-                <div class="wpic">
-                    <div style="width:170px;left:0px;top:30px"><big title="多云" class="png40 n01 lv0"></big></div>
-                    <div style="width:170px;left:170px;top:30px"><big title="霾" class="png40 n53 lv0"></big></div>
-                    <div style="width:170px;left:340px;top:30px"><big title="霾" class="png40 n53 lv0"></big></div>
-                    <div style="width:170px;left:510px;top:30px"><big title="霾" class="png40 n53 lv0"></big></div>
-                </div>
-                <div id="biggt" class="biggt">
-                    <svg height="70" version="1.1" width="680" xmlns="http://www.w3.org/2000/svg"
-                         style="overflow: hidden; position: relative; left: -0.5px;">
-                        <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.2</desc>
-                        <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
-                        <path fill="none" stroke="#f68227" d="M85,9L255,34L425,34L595,59" stroke-width="2"
-                              style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-                        <circle cx="85" cy="9" r="4" fill="#f68227" stroke="#f68227"
-                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-                        <circle cx="255" cy="34" r="4" fill="#f68227" stroke="#f68227"
-                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-                        <circle cx="425" cy="34" r="4" fill="#f68227" stroke="#f68227"
-                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-                        <circle cx="595" cy="59" r="4" fill="#f68227" stroke="#f68227"
-                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-                    </svg>
-                </div>
-                <div class="tem">
-                    <em style="width:170px;left:0px;top:79px">0℃</em><em
-                        style="width:170px;left:170px;top:104px">-1℃</em><em style="width:170px;left:340px;top:104px">-1℃</em><em
-                        style="width:170px;left:510px;top:129px">-2℃</em></div>
-                <div class="winf">
-                    <em style="width:170px;left:0px">微风</em><em style="width:170px;left:170px">微风</em><em
-                        style="width:170px;left:340px">微风</em><em style="width:170px;left:510px">微风</em></div>
-                <div class="winl">
-                    <em style="width:170px;left:0px">&lt;3级</em><em style="width:170px;left:170px">&lt;3级</em><em
-                        style="width:170px;left:340px">&lt;3级</em><em style="width:170px;left:510px">&lt;3级</em></div>
             </div>
+            <div class="ad3" id="adposter_6122">
+                <script>
+                    (function () {
+                        var s = "_" + Math.random().toString(36).slice(2);
+                        document.write('<div id="' + s + '"></div>');
+                        (window.slotbydup = window.slotbydup || []).push({
+                            id: '3011953',
+                            container: s,
+                            size: '680,90',
+                            display: 'inlay-fix'
+                        });
+                    })();
+                </script>
+                <div id="_r2o8g4fmhyuepytk89m4mquxr"></div>
+            </div>
+            <div id="weatherChart">
+                <div class="tabs"><h2>整点天气实况</h2>
+                    <p id="currHour"></p>
+                    <p class="second"><b id="detailHour"></b></p>
+                    <ul>
+                        <li class="aqi_on on" data-role="air">空气质量</li>
+                        <li class="p2" data-role="tem">温度</li>
+                        <li class="sd" data-role="humidity">相对湿度</li>
+                        <li class="js" data-role="rain">降水量</li>
+                        <li class="fl" data-role="wind">风力风向</li>
+                    </ul>
+                </div>
+                <div id="third">
+
+                </div>
+
+            </div>
+
 
             <div id="livezs" class="livezs curve_livezs">
                 <style>
